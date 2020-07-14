@@ -326,19 +326,36 @@ export default {
     generarDesistimiento() {
       var horaActual = this.hoy.getHours() + ":" + this.hoy.getMinutes();
       var documento = {
-        header: {text: 'DAMVV/SEM.ELSALTO/003', alignment:"right",margin:[0,0,20,0]},
+        header: {
+          text: "DAMVV/SEM.ELSALTO/003",
+          alignment: "right",
+          margin: [0, 0, 20, 0]
+        },
 
         footer: {
-          columns: [{text: `*La información de este documento fue recomendada por la Secretaria de Igualdad Sustantiva entre Mujeres y Hombres del Estado de Jalisco`,margin: [20, 0, 20, 0], fontSize: 10,}]
+          columns: [
+            {
+              text: `*La información de este documento fue recomendada por la Secretaria de Igualdad Sustantiva entre Mujeres y Hombres del Estado de Jalisco`,
+              margin: [20, 0, 20, 0],
+              fontSize: 10
+            }
+          ]
         },
         content: [
-          { text: "CONSTANCIA DE DESISTIMIENTO DE SERVICIOS", style: "header"},
-          { text: `\nFecha: ${this.formatoFecha}.    Hora: ${horaActual}.    Folio: ____`, alignment:"right", margin:[0,0,20,0]},
-          `Yo ${this.nombreUsuaria} encontrándome en pleno uso y goce de mis facultades y libre de cualquier coacción, es mi decisión y por así convenir a mis intereses no aceptar en este momento los servicios de apoyo, traslado y/o acompañamiento que se me ofrecen en este instante:`,
+          { text: "CONSTANCIA DE DESISTIMIENTO DE SERVICIOS", style: "header" },
+          {
+            text: `\nFecha: ${this.formatoFecha}.    Hora: ${horaActual}.    Folio: ____`,
+            alignment: "right",
+            margin: [0, 0, 20, 0]
+          },
+          {
+            text: `\n\nYo ${this.nombreUsuaria} encontrándome en pleno uso y goce de mis facultades y libre de cualquier coacción, es mi decisión y por así convenir a mis intereses no aceptar en este momento los servicios de apoyo, traslado y/o acompañamiento que se me ofrecen en este instante:`,
+            style: "parrafo"
+          },
 
           {
             style: "tabla",
-            widths: [100, "*", 100, "*", 100, "*"],
+            widths: ["auto", "*", "auto", "*", "auto", "*"],
             table: {
               body: [
                 [
@@ -364,18 +381,51 @@ export default {
                   " ",
                   "Asesoría Jurídica",
                   " "
+                ],
+                [
+                  "Asesoría Psicológica",
+                  " ",
+                  { colSpan: 4, rowSpan: 1, text: "Otro especifique" },
+                  "",
+                  "",
+                  ""
                 ]
               ]
             }
           },
-          `Por lo que deslindo de cualquier responsabilidad administrativa, civil o penal a El Gobierno Municipal de El Salto, Jalisco.`,
-          `Dicho lo anterior, me responsabilizo de mi decisión pese a que por parte del personal especializado que me ha atendido, se me ha hecho saber el riesgo inminente en mi integridad física y/o psicológica por parte del generador de violencia. Aun así y a sabiendas de ello, es mi deseo retirarme de esta Dependencia sin haber aceptado dicho apoyo.`,
-          `Exposición de Motivos: `,
-          `*La información de este documento fue recomendada por la Secretaria de Igualdad Sustantiva entre Mujeres y Hombres del Estado de Jalisco`,
-          `Nombre y firma de la usuaria 	   	                      Huella`,
-          `Trabajo social		                           Psicología		             		     Jurídico`,
-
-          `Nombre y firma de quien/es brindaron la orientación/atención y número de Cédula Profesional.`
+          { text: `\n\nPor lo que deslindo de cualquier responsabilidad administrativa, civil o penal a El Gobierno Municipal de El Salto, Jalisco.`, style:"parrafo"},
+          { text: `\nDicho lo anterior, me responsabilizo de mi decisión pese a que por parte del personal especializado que me ha atendido, se me ha hecho saber el riesgo inminente en mi integridad física y/o psicológica por parte del generador de violencia. Aun así y a sabiendas de ello, es mi deseo retirarme de esta Dependencia sin haber aceptado dicho apoyo.`,style:"parrafo"},
+          { text: `\n\nExposición de Motivos: `, margin:[20,0,20,0]},
+          { text: "____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",alignment:"justyfi",margin:[20,0,20,0]},
+          
+          {
+            text: `\n\n\n_______________________________________   		___________`,
+            alignment: "center"
+          },
+          {
+            text: `Nombre y firma de la usuaria   	                    	Huella`,
+            alignment: "center",
+            fontSize: 11
+          },
+          {
+            text: `\n\n______________________           ______________________              ______________________`,
+            alignment: "center"
+          },
+          {
+            text: `Trabajo social              	         	       Psicología                            	       Jurídico`,
+            alignment: "center",
+            fontSize: 11
+          },
+          
+          {
+            text: `\n\n_________________________________________________________________________________`,
+            alignment: "center"
+          },
+          {
+            text: `Nombre y firma de quien brindó la  orientación/atención y número de Cédula Profesional`,
+            alignment: "center",
+            fontSize: 11
+          },
         ],
         styles: {
           header: {
@@ -387,7 +437,7 @@ export default {
           parrafo: {
             fontSize: 12,
             alignment: "justify",
-            margin: [25, 0, 25, 0]
+            margin: [20, 0, 20, 0]
           },
           tabla: {
             margin: [25, 20, 25, 0]
@@ -405,7 +455,13 @@ export default {
       var horaActual = this.hoy.getHours() + ":" + this.hoy.getMinutes();
       var documento = {
         footer: {
-          columns: [{text: `*La información de este documento fue recomendada por la Secretaria de Igualdad Sustantiva entre Mujeres y Hombres del Estado de Jalisco`,margin: [20, 0, 20, 0], fontSize: 10,}]
+          columns: [
+            {
+              text: `*La información de este documento fue recomendada por la Secretaria de Igualdad Sustantiva entre Mujeres y Hombres del Estado de Jalisco`,
+              margin: [20, 0, 20, 0],
+              fontSize: 10
+            }
+          ]
         },
         content: [
           { text: "CONSTANCIA DE SERVICIOS OFRECIDOS", style: "header" },
@@ -512,8 +568,7 @@ export default {
             text: `Nombre y firma de quien brindó la  orientación/atención y número de Cédula Profesional`,
             alignment: "center",
             fontSize: 11
-          },
-         
+          }
         ],
         styles: {
           header: {
@@ -527,7 +582,7 @@ export default {
             alignment: "justify",
             margin: [25, 0, 25, 0]
           },
-         
+
           tabla: {
             margin: [25, 20, 25, 0]
           }
@@ -537,7 +592,9 @@ export default {
         }
       };
       //pdfMake.createPdf(documento).open();
-      pdfMake.createPdf(documento).download("CONSTANCIA DE SERVICIOS OFRECIDOS.pdf");
+      pdfMake
+        .createPdf(documento)
+        .download("CONSTANCIA DE SERVICIOS OFRECIDOS.pdf");
     },
     formatDate(date) {
       if (!date) return null;
